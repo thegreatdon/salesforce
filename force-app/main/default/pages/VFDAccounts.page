@@ -1,0 +1,35 @@
+<apex:page standardController="Account" lightningStylesheets="true" recordsetVar="accounts">
+
+    <apex:tabPanel >
+          <apex:tab label="Accounts">
+                <apex:tabPanel >
+                    <apex:tab label="Account Table">
+                        <apex:pageBlock >
+                             <apex:pageBlockTable value="{! accounts }" var="account">
+                                     <apex:column value="{!account.Name}"/>
+                                     <apex:column value="{!account.OwnerId}"/>
+                             </apex:pageBlockTable>
+                        </apex:pageBlock>
+                     </apex:tab>
+                     <apex:tab label="Account List Links">
+                            
+                            <apex:repeat value="{! accounts }" var="account">
+                                <li class="sideBarListLink"><apex:outputLink value="?id={!account.Id}" target="_parent">{!account.Name}</apex:outputLink></li>
+                            </apex:repeat>
+                     </apex:tab>
+                </apex:tabPanel>
+
+        </apex:tab>
+
+        <apex:tab label="Details">
+            <apex:detail relatedList="true" />
+        </apex:tab>
+
+        <apex:tab label="Contacts">
+            <apex:relatedList list="Contacts" />
+        </apex:tab>
+
+    </apex:tabPanel>
+
+
+</apex:page>

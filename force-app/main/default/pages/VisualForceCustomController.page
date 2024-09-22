@@ -1,0 +1,11 @@
+<apex:page controller="VisualForceCustomController" lightningStylesheets="true">
+ 
+test this edits from vs code
+        <apex:pageBlock title="Logged In User: {!$User.FirstName} {!$User.LastName}">
+            Email: {!$User.Email}
+        </apex:pageBlock>
+        <apex:pageBlock title="User Account: {!account.name}">
+            Account Name: {!account.name}
+        </apex:pageBlock>
+
+</apex:page>
